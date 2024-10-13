@@ -128,6 +128,7 @@ def nestedList(students):
     # Stampa i nomi
     for student in second_lowest_students:
         print(student)
+'''
 
 if __name__ == '__main__':
     n = int(input())  # Numero di studenti
@@ -140,7 +141,7 @@ if __name__ == '__main__':
         score = float(input())  # Voto dello studente
         students.append((name, score))
     nestedList(students)
-
+'''
 #--------------------------------------------------------
 #List Comprehensions
 '''
