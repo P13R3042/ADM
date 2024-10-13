@@ -504,23 +504,176 @@ if __name__ == '__main__':
 ###################################################################
 #• Exceptions (only 1 - max points: 10)
 #https://www.hackerrank.com/challenges/exceptions
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+'''
+if __name__ == '__main__':
+    num_exec = int(input())
+    
+    for _ in range(num_exec):
+        try: 
+            a,b = map(int , input().split())            
+            print(str(a//b))
+            
+        except ValueError as e:
+            
+            print("Error Code: "+str(e))
+        except ZeroDivisionError:
+            
+            print("Error Code: integer division or modulo by zero")
+            
+    
+'''
 ###################################################################
 #• Built-ins (only 3 - max points: 80)
 #https://www.hackerrank.com/challenges/zipped
+def zip_func():
+    n, x = map(int, input().split())
+
+    #read scores
+    scores_by_student = [list(map(float, input().split())) for _ in range(x)]
+
+    # Using zip to transpose the list of marks, so we group by student instead of by subject
+    for scores in zip(*scores_by_student):
+        avg = sum(scores) / x
+        print(f"{avg:.1f}")
+'''
+if __name__ == '__main__':
+    zip_func()
+'''
+#--------------------------------------------------------
 #https://www.hackerrank.com/challenges/python-sort-sort
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+
+def sorting(arr,k):
+    arr.sort(key=lambda x: x[k])
+
+    for row in arr:
+        print(*row)
+
+
+
+if __name__ == '__main__':
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    k = int(input())
+    sorting(arr,k)
+
+#--------------------------------------------------------
 #https://www.hackerrank.com/challenges/ginorts
+def ginoSort(s):
+    lower_lst = []
+    upper_lst = []
+    pari_lst = []
+    dispari_lst = []
+    for c in s:
+        if c.islower():
+            #lower
+            lower_lst.append(c)
+        if c.isupper():
+            #UPPER
+            upper_lst.append(c)
+        if c.isdigit() and int(c) % 2 == 1:
+            #dispari
+            dispari_lst.append(c)
+        if c.isdigit() and int(c) % 2 == 0:
+            #pari
+            pari_lst.append(c)
+            
+    lower_lst = sorted(lower_lst)
+    upper_lst = sorted(upper_lst)
+    dispari_lst = sorted(dispari_lst)
+    pari_lst = sorted(pari_lst)
+    
+    print(''.join(lower_lst + upper_lst + dispari_lst + pari_lst))
+    return ''.join(lower_lst + upper_lst + dispari_lst + pari_lst)
+'''
+if __name__ == '__main__':
+    _in = input()
+    ginoSort(_in)
+'''
 ###################################################################
 #• Python Functionals (only 1 - max points: 20)
 #https://www.hackerrank.com/challenges/map-and-lambda-expression
+cube = lambda x: pow(x,3)# complete the lambda function 
+
+def fibonacci(n):
+    fib_ = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_.append(a)
+        a, b = b, a + b
+    return fib_
+
+
 ###################################################################
 #• Regex and Parsing challenges (all – total: 17 - max points: 560)
 #https://www.hackerrank.com/domains/python/py-regex
 ###################################################################
 #• XML (all – total: 2 - max points: 40)
 #https://www.hackerrank.com/domains/python/xml
+
+#XML 1 - Find the Score
+def get_attr_number(node):
+    res = 0
+    
+    res += len(node.attrib)
+    
+    for child in node:
+        res += get_attr_number(child)
+    
+    return res
+
+#--------------------------------------------------------
+#XML2 - Find the Maximum Depth
+maxdepth = 0
+def depth(elem, level):
+    global maxdepth
+    if level == -1 :
+        level = 0
+        
+    if level > maxdepth:
+        maxdepth = level
+        
+    for child in elem:
+        depth(child, level + 1)
+
 ###################################################################
 #• Closures and Decorations (all – total: 2 - max points: 60)
 #https://www.hackerrank.com/domains/python/closures-and-decorators
+
+#Standardize Mobile Number Using Decorators
+def wrapper(f):
+    def fun(l):
+        return f(['+91 '+num[-10:-5]+' '+num[-5:] for num in l])
+    return fun
+
+
+#--------------------------------------------------------
+#Decorators 2 - Name Directory
+
+def person_lister(f):
+    def inner(people):
+        # ages are the 3rd elements for each Person
+        _sorted =sorted(people, key=lambda x: int(x[2]))
+        
+        return [f(p) for p in _sorted]
+    return inner
 ###################################################################
 #Numpy (all – total: 15 - max points: 300)
 #https://www.hackerrank.com/domains/python/numpy
+
+
