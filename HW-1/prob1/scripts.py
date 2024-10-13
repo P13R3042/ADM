@@ -447,6 +447,60 @@ def merge_the_tools(string, k):
 ###################################################################
 #• Date and Time (all – total: 2 - max points: 40)
 #https://www.hackerrank.com/domains/python/py-date-time
+
+#Calendar Module
+import calendar
+
+def getDay(date):
+    mm, dd, yyyy = map(int, date.split())
+    
+    day_index = calendar.weekday(yyyy, mm, dd)
+    
+    days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY']
+    
+    print(days[day_index])
+
+'''
+if __name__ == '__main__':
+    date_ = input() 
+    getDay(date_)
+'''
+#--------------------------------------------------------
+#Time Delta
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from datetime import datetime
+
+# Complete the time_delta function below.
+def time_delta(t1, t2):    
+    dt1 = datetime.strptime(t1, "%a %d %b %Y %H:%M:%S %z")
+    dt2 = datetime.strptime(t2, "%a %d %b %Y %H:%M:%S %z")
+    
+    delta = abs(int((dt1 - dt2).total_seconds()))
+    
+    return str(delta)
+'''
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        t1 = input()
+
+        t2 = input()
+
+        delta = time_delta(t1, t2)
+
+        fptr.write((delta) + '\n')
+
+    fptr.close()
+'''
 ###################################################################
 #• Exceptions (only 1 - max points: 10)
 #https://www.hackerrank.com/challenges/exceptions
