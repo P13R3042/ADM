@@ -102,7 +102,18 @@ if __name__ == '__main__':
 ###################################################################
 #• Data types (all – total: 6 - max points: 60)
 #https://www.hackerrank.com/domains/python/py-basic-data-types
+
+#Nested Lists
 #--------------------------------------------------------
+#List Comprehensions
+#--------------------------------------------------------
+#Find the Runner-Up Score!
+#--------------------------------------------------------
+#Find the percentage
+#--------------------------------------------------------
+#Lists
+#--------------------------------------------------------
+#Tuples
 ###################################################################
 #• Strings (all – total: 14 - max points: 220)
 #https://www.hackerrank.com/domains/python/py-strings
