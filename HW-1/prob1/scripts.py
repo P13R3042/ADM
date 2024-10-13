@@ -48,9 +48,61 @@ if __name__ == '__main__':
     
 '''
 #--------------------------------------------------------
+#Python: Division
+'''
+if __name__ == '__main__':
+    try:
+        a = int(input())
+        b = int(input())
+        if b != 0:
+            print(a//b)
+            print(a/b)
+    except:
+        print("bad arguments")
+
+'''
+#--------------------------------------------------------
+#Loops
+'''
+if __name__ == '__main__':
+    n = int(input())
+    
+    for i in range(n):
+        print(i**2)
+    
+
+'''
+#--------------------------------------------------------
+#Write a function
+def is_leap(year):
+    leap = False
+    
+    if ( year % 4 )== 0 : 
+        leap = True
+        if ( year % 100 )== 0 : 
+            leap = False
+            if ( year % 400 )== 0 : 
+                leap = True
+    
+    return leap
+
+#--------------------------------------------------------
+#Print Function
+'''
+if __name__ == '__main__':
+    n = int(input())
+    res = ""
+    for i in range(1,n+1):
+        res+=str(i)
+    print(res)
+    
+
+'''
+
 ###################################################################
 #• Data types (all – total: 6 - max points: 60)
 #https://www.hackerrank.com/domains/python/py-basic-data-types
+#--------------------------------------------------------
 ###################################################################
 #• Strings (all – total: 14 - max points: 220)
 #https://www.hackerrank.com/domains/python/py-strings
